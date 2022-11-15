@@ -10,7 +10,7 @@ public class Monk extends  BaseHero{
         super.setBand(band);
     }
     @Override
-    public void step(List<BaseHero> band) {
+    public void step(List<BaseHero> side) {
         boolean flag = true;
         int cnt = 0;
         while (flag) {

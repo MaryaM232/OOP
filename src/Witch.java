@@ -9,7 +9,7 @@ public class Witch extends BaseHero{
     }
 
     @Override
-    public void step(List<BaseHero> band) {
+    public void step(List<BaseHero> side) {
         boolean flag = true;
         int cnt = 0;
         while (flag){
