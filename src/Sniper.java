@@ -21,7 +21,8 @@ public class Sniper extends BaseHero {
             band.get(index).getDamage((damage.x+ damage.y)/2);
         }
         for (BaseHero p: band){
-            if (p.getName().equals("Peasant"));
+            if (p.getName().equals("Peasant")) shots++;
+
         }
     }
 }

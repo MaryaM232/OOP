@@ -7,17 +7,22 @@ public class Crossbowman extends BaseHero{
     }
 
     @Override
-    public void step(List<BaseHero> side) {
-        boolean flag = true;
-        int cnt = 0;
-
-        float tmpH = side.get(0).health, index = 0;
-        for (int i = 1; i < side.size(); i++) {
-            if (tmpH > side.get(i).health) {
+    public void step(List<BaseHero> side){
+        float tmpH = side.get(0).health;
+        int index = 0;
+        for (int i = 1; i < side.size(); i++){
+            if (tmpH > side.get(i).health){
                 tmpH = side.get(i).health;
                 index = i;
             }
         }
-        band.get(cnt).getDamage((damage.x+damage.y)/2);
+        if(--shots > 0){
+            shots--;
+            band.get(index).getDamage((damage.x+ damage.y)/2);
+        }
+        for (BaseHero p: band){
+            if (p.getName().equals("Peasant")) shots++;
+
+        }
     }
 }
