@@ -22,8 +22,5 @@ public class Monk extends  BaseHero{
             if (++cnt == band.size()) flag = false;
         }
     }
-    @Override
-    public String getInfo() { return String.format("%s magic: %b", super.getInfo(), magic);
-    }
 }
 
