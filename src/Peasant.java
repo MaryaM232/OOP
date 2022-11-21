@@ -8,7 +8,6 @@ public class Peasant extends BaseHero{
         delivery = true;
         position = new Vector2(x, y);
     }
-    @Override
-    public String getInfo() { return String.format("%s delivery: %b", super.getInfo(), delivery); }
+
 }
 

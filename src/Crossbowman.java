@@ -11,7 +11,7 @@ public class Crossbowman extends BaseHero{
         float tmpH = side.get(0).health;
         int index = 0;
         for (int i = 1; i < side.size(); i++){
-            if (tmpH > side.get(i).health){
+            if (!side.get(i).getStatus().equals("Die") && tmpH > side.get(i).health){
                 tmpH = side.get(i).health;
                 index = i;
             }
@@ -22,7 +22,6 @@ public class Crossbowman extends BaseHero{
         }
         for (BaseHero p: band){
             if (p.getName().equals("Peasant")) shots++;
-
         }
     }
 }

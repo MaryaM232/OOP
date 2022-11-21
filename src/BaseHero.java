@@ -41,7 +41,13 @@ public abstract class BaseHero implements Actions{
 
     public String getName() { return name; }
     protected String getStatus() { return status; }
-    protected void getDamage(float damagePower){health -=damagePower;}
+    protected void getDamage(float damagePower){
+        health -=damagePower;
+        if(health <= 0){
+            status = "Die";
+            health = 0;
+        }
+    }
     @Override
     public String returnCondition() {
         return name +
