@@ -1,24 +1,27 @@
 import java.util.List;
 public class Crossbowman extends BaseHero{
     public Crossbowman(List<BaseHero> band, int x, int y){
-        super(String.format("Crossbowman#%d", ++Crossbowman.number),
-                10, 6, 3, 16, new int[]{2, 3}, 4);
+        super("Crossbowman",10, 6, 3, 16, new int[]{2, 3}, 4);
         position = new Vector2(x, y);
         super.setBand(band);
     }
 
     @Override
-    public void step(List<BaseHero> side) {
-        boolean flag = true;
-        int cnt = 0;
-
-        float tmpH = side.get(0).health, index = 0;
-        for (int i = 1; i < side.size(); i++) {
-            if (tmpH > side.get(i).health) {
+    public void step(List<BaseHero> side){
+        float tmpH = side.get(0).health;
+        int index = 0;
+        for (int i = 1; i < side.size(); i++){
+            if (!side.get(i).getStatus().equals("Die") && tmpH > side.get(i).health){
                 tmpH = side.get(i).health;
                 index = i;
             }
         }
-        band.get(cnt).getDamage((damage.x+damage.y)/2);
+        if(--shots > 0){
+            shots--;
+            band.get(index).getDamage((damage.x+ damage.y)/2);
+        }
+        for (BaseHero p: band){
+            if (p.getName().equals("Peasant")) shots++;
+        }
     }
 }

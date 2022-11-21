@@ -2,7 +2,7 @@ import java.util.List;
 public class Witch extends BaseHero{
     private boolean magic;
     public Witch(List<BaseHero> band, int x, int y) {
-        super(String.format("Witch#%d", ++Witch.number), 30, 17, 12, 0, new int[]{-5, 0}, 9);
+        super("Witch", 30, 17, 12, 0, new int[]{-5, 0}, 9);
         magic = true;
         position = new Vector2(x, y);
         super.setBand(band);
@@ -21,10 +21,5 @@ public class Witch extends BaseHero{
             }
             if (++cnt == band.size()) flag = false;
         }
-    }
-
-    @Override
-    public String getInfo() {
-        return String.format("%s  magic: %b", super.getInfo(), magic);
     }
 }
