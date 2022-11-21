@@ -4,7 +4,7 @@ public abstract class BaseHero implements Actions{
     private String name;
     private  int attack;
     private int protection;
-    private int shots;
+    protected int shots;
     protected Vector2 damage;
     protected float health;
     protected int maxHealth;
@@ -29,6 +29,7 @@ public abstract class BaseHero implements Actions{
         this.health = this.maxHealth = health;
         this.health--;
         status = "stand";
+        number++;
     }
     public BaseHero(String name, int health, int attack,
                     int protection, int shots, int[] damage, int speed){

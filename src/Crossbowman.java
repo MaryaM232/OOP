@@ -1,8 +1,7 @@
 import java.util.List;
 public class Crossbowman extends BaseHero{
     public Crossbowman(List<BaseHero> band, int x, int y){
-        super(String.format("Crossbowman#%d", ++Crossbowman.number),
-                10, 6, 3, 16, new int[]{2, 3}, 4);
+        super("Crossbowman",10, 6, 3, 16, new int[]{2, 3}, 4);
         position = new Vector2(x, y);
         super.setBand(band);
     }
